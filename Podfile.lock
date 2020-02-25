@@ -1,0 +1,79 @@
+PODS:
+  - AnyErrorKit (0.1.4)
+  - AppCenter (2.5.3):
+    - AppCenter/Analytics (= 2.5.3)
+    - AppCenter/Crashes (= 2.5.3)
+  - AppCenter/Analytics (2.5.3):
+    - AppCenter/Core
+  - AppCenter/Core (2.5.3)
+  - AppCenter/Crashes (2.5.3):
+    - AppCenter/Core
+  - FLLogs (0.1.2):
+    - XCGLogger (~> 7.0.0)
+  - FLUtilities (0.1.0)
+  - Kingfisher (5.13.0):
+    - Kingfisher/Core (= 5.13.0)
+  - Kingfisher/Core (5.13.0)
+  - MBProgressHUD (1.1.0)
+  - ObjcExceptionBridging (1.0.1):
+    - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
+  - ObjcExceptionBridging/ObjcExceptionBridging (1.0.1)
+  - SwiftLint (0.38.2)
+  - XCGLogger (7.0.0):
+    - XCGLogger/Core (= 7.0.0)
+  - XCGLogger/Core (7.0.0):
+    - ObjcExceptionBridging
+
+DEPENDENCIES:
+  - AnyErrorKit (from `https://github.com/Nickelfox/AnyErrorKit.git`)
+  - AppCenter
+  - FLLogs (from `https://github.com/Nickelfox/FLLogs.git`, branch `develop`)
+  - FLUtilities (from `https://github.com/Nickelfox/FLUtilities.git`, branch `develop`)
+  - Kingfisher
+  - MBProgressHUD (~> 1.1.0)
+  - SwiftLint
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AppCenter
+    - Kingfisher
+    - MBProgressHUD
+    - ObjcExceptionBridging
+    - SwiftLint
+    - XCGLogger
+
+EXTERNAL SOURCES:
+  AnyErrorKit:
+    :git: https://github.com/Nickelfox/AnyErrorKit.git
+  FLLogs:
+    :branch: develop
+    :git: https://github.com/Nickelfox/FLLogs.git
+  FLUtilities:
+    :branch: develop
+    :git: https://github.com/Nickelfox/FLUtilities.git
+
+CHECKOUT OPTIONS:
+  AnyErrorKit:
+    :commit: 4780f3f4d4cfa6590de1150f9502282db853e257
+    :git: https://github.com/Nickelfox/AnyErrorKit.git
+  FLLogs:
+    :commit: 0c87ef114b634a5ac099d0fec760950460774083
+    :git: https://github.com/Nickelfox/FLLogs.git
+  FLUtilities:
+    :commit: eef14072880333c5b97e54c672387f4f34bcecc5
+    :git: https://github.com/Nickelfox/FLUtilities.git
+
+SPEC CHECKSUMS:
+  AnyErrorKit: 7314433dd45db671a89fe6a411f3f13d6affc0b1
+  AppCenter: 765ff38c4d360fc5ec61b61a8be24d74cd6d4d83
+  FLLogs: 53291402e04fc772302ff05adb79a4eadec77b07
+  FLUtilities: 1b101734a35e894fd019e3fe6b430214c8fa3186
+  Kingfisher: 0d334cada987fcddbe9b5cec516406e1ee9d4748
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
+  SwiftLint: 8f5d2f903e1c9bcbc832fd16771e80a263ac6cbb
+  XCGLogger: 0434f15e3909cdc450bb63faf638b8792ab782ab
+
+PODFILE CHECKSUM: 9c18d8d0f8af4eb915eae726355bacc9e163e162
+
+COCOAPODS: 1.8.4

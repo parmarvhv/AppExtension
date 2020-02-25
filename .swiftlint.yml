@@ -1,0 +1,69 @@
+disabled_rules:
+- trailing_whitespace
+- vertical_whitespace
+
+opt_in_rules:
+- empty_count
+- empty_string
+
+excluded:
+- Carthage
+- Pods
+- SwiftLint/Common/3rdPartyLib
+- trailing_whitespace
+
+
+line_length:
+    warning: 150
+    error: 180
+    ignores_function_declarations: true
+    ignores_comments: true
+    ignores_urls: true
+
+
+function_body_length:
+    warning: 120
+    error: 200
+
+# included: # paths to include during linting. `--path` is ignored if present.
+#   - Model
+#   - Code
+
+# configurable rules can be customized from this configuration file
+# binary rules can set their severity level
+force_cast: warning # implicitly
+force_try:
+  severity: warning # explicitly
+# rules that have both warning and error levels, can set just the warning level
+# implicitly
+
+type_body_length:
+  - 300 # warning
+  - 400 # error
+# or they can set both explicitly
+
+# naming rules can set warnings/errors for min_length and max_length
+# additionally they can set excluded names
+type_name:
+  min_length: 2 # only warning
+  max_length: # warning and error
+    warning: 40
+    error: 50
+  excluded: iPhone # excluded via string
+identifier_name:
+  min_length: 
+    warning: 2 # only warning≠≠
+    error: 1 # only error
+  excluded: # excluded via string array
+    - id
+    - URL
+    - GlobalAPIKey
+reporter: "xcode" # reporter type (xcode, json, csv, checkstyle, junit, html, emoji, sonarqube, markdown)
+
+
+#platform :ios
+# ignore all warnings from all dependencies
+# inhibit_all_warnings!
+
+# ignore warnings from a specific dependency
+# pod 'FBSDKCoreKit', :inhibit_warnings => true
