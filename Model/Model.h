@@ -2,8 +2,8 @@
 //  Model.h
 //  Model
 //
-//  Created by Ravindra Soni on 30/11/18.
-//  Copyright © 2018 Nickelfox. All rights reserved.
+//  Created by Vaibhav Parmar on 30/11/18.
+//  Copyright © 2020 Nickelfox. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		23FAC33D4963E446D830AACA /* Pods_AppExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF244BFD639AF39D4D9FA008 /* Pods_AppExtension.framework */; };
 		2E254E5A2661B46D114A776C /* Pods_Model.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9691FCF1EB18DD738B70658 /* Pods_Model.framework */; };
+		8000E3C424076C9000B389A4 /* Contact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8000E3C324076C9000B389A4 /* Contact.storyboard */; };
+		8000E3C924076D4300B389A4 /* ContactTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8000E3C824076D4300B389A4 /* ContactTableCell.swift */; };
+		8000E3CB24076E5200B389A4 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8000E3CA24076E5200B389A4 /* ContactViewController.swift */; };
+		8000E3CD24076F0400B389A4 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8000E3CC24076F0400B389A4 /* ContactViewModel.swift */; };
 		E33D6E0C21BFC08900A3A174 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D6E0B21BFC08900A3A174 /* Logging.swift */; };
 		E33D6E0D21BFC08900A3A174 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D6E0B21BFC08900A3A174 /* Logging.swift */; };
 		E33D6E3421BFC21D00A3A174 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E33D6E1321BFC21D00A3A174 /* Assets.xcassets */; };
@@ -66,6 +70,10 @@
 		38289BFEA7A50EA97916F002 /* Pods-Model.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Model.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Model/Pods-Model.debug.xcconfig"; sourceTree = "<group>"; };
 		40C6608BE3357626E64EBC76 /* Pods-Model.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Model.staging.xcconfig"; path = "Pods/Target Support Files/Pods-Model/Pods-Model.staging.xcconfig"; sourceTree = "<group>"; };
 		5EB24D852DCDE1EE24D817B0 /* Pods-AppExtension.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppExtension.staging.xcconfig"; path = "Pods/Target Support Files/Pods-AppExtension/Pods-AppExtension.staging.xcconfig"; sourceTree = "<group>"; };
+		8000E3C324076C9000B389A4 /* Contact.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Contact.storyboard; sourceTree = "<group>"; };
+		8000E3C824076D4300B389A4 /* ContactTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableCell.swift; sourceTree = "<group>"; };
+		8000E3CA24076E5200B389A4 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		8000E3CC24076F0400B389A4 /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
 		811464CF8D11E4865BD648CF /* Pods-AppExtension.dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppExtension.dev.xcconfig"; path = "Pods/Target Support Files/Pods-AppExtension/Pods-AppExtension.dev.xcconfig"; sourceTree = "<group>"; };
 		8D8618986B15ADBCFDF4D754 /* Pods-AppExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppExtension/Pods-AppExtension.release.xcconfig"; sourceTree = "<group>"; };
 		91A96EEA47629467E9F619B5 /* Pods-Model.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Model.release.xcconfig"; path = "Pods/Target Support Files/Pods-Model/Pods-Model.release.xcconfig"; sourceTree = "<group>"; };
@@ -136,6 +144,41 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8000E3C224076C7500B389A4 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				8000E3C524076CF700B389A4 /* Controllers */,
+				8000E3C624076CFF00B389A4 /* ViewModels */,
+				8000E3C724076D0900B389A4 /* Views */,
+				8000E3C324076C9000B389A4 /* Contact.storyboard */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
+		8000E3C524076CF700B389A4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8000E3CA24076E5200B389A4 /* ContactViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8000E3C624076CFF00B389A4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8000E3CC24076F0400B389A4 /* ContactViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8000E3C724076D0900B389A4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8000E3C824076D4300B389A4 /* ContactTableCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		CD56D27A3EDF98946E221CAD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +241,7 @@
 				E33D6E1D21BFC21D00A3A174 /* AppDelegate.swift */,
 				E33D6E1C21BFC21D00A3A174 /* Storyboards.swift */,
 				E33D6E3221BFC21D00A3A174 /* Configuration.swift */,
+				8000E3C224076C7500B389A4 /* Contact */,
 				E33D6E1E21BFC21D00A3A174 /* Helpers */,
 			);
 			path = Code;
@@ -392,6 +436,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E33D6E3521BFC21D00A3A174 /* LaunchScreen.storyboard in Resources */,
+				8000E3C424076C9000B389A4 /* Contact.storyboard in Resources */,
 				E33D6E3421BFC21D00A3A174 /* Assets.xcassets in Resources */,
 				E33D6E3621BFC21D00A3A174 /* Main.storyboard in Resources */,
 			);
@@ -487,9 +532,11 @@
 			files = (
 				E33D6E4721BFC21D00A3A174 /* Colors.swift in Sources */,
 				E33D6E3921BFC21D00A3A174 /* Storyboards.swift in Sources */,
+				8000E3CD24076F0400B389A4 /* ContactViewModel.swift in Sources */,
 				E33D6E3D21BFC21D00A3A174 /* UIReusability.swift in Sources */,
 				E33D6E3821BFC21D00A3A174 /* ViewController.swift in Sources */,
 				E33D6E5A21BFC49600A3A174 /* TableViewCell.swift in Sources */,
+				8000E3C924076D4300B389A4 /* ContactTableCell.swift in Sources */,
 				E33D6E0C21BFC08900A3A174 /* Logging.swift in Sources */,
 				E33D6E4921BFC21D00A3A174 /* Configuration.swift in Sources */,
 				E33D6E5321BFC47900A3A174 /* ImageView.swift in Sources */,
@@ -501,6 +548,7 @@
 				E33D6E3F21BFC21D00A3A174 /* UITextField+Helper.swift in Sources */,
 				E33D6E3C21BFC21D00A3A174 /* NavigationBar.swift in Sources */,
 				E33D6E5521BFC47900A3A174 /* Loader.swift in Sources */,
+				8000E3CB24076E5200B389A4 /* ContactViewController.swift in Sources */,
 				E33D6E4121BFC21D00A3A174 /* AppUtility.swift in Sources */,
 				E33D6E3B21BFC21D00A3A174 /* UIViewController+Helper.swift in Sources */,
 				E33D6E3721BFC21D00A3A174 /* Constants.swift in Sources */,
