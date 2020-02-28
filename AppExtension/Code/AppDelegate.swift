@@ -11,6 +11,8 @@ import UIKit
 import AppCenter
 import AppCenterCrashes
 import AppCenterAnalytics
+import Firebase
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         self.setupAppCenterAnalytics()
+        self.registerFirebase()
         return true
     }
 
@@ -57,4 +60,88 @@ extension AppDelegate {
                           withServices: [MSAnalytics.self, MSCrashes.self])
     }
     
+}
+
+// MARK: MessagingDelegate
+extension AppDelegate: MessagingDelegate {
+    
+    func registerFirebase() {
+        if FirebaseApp.app() == nil {
+            FirebaseApp.configure()
+            Messaging.messaging().delegate = self
+            self.registerForPushNotifications()
+        }
+        #if RELEASE
+        Analytics.setAnalyticsCollectionEnabled(true)
+        #else
+        Analytics.setAnalyticsCollectionEnabled(false)
+        #endif
+    }
+    
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+        print("Firebase registration token: \(fcmToken)")
+    }
+    
+    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
+        print(remoteMessage)
+    }
+    
+}
+
+// MARK: Remote Notifications
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    
+    func registerForPushNotifications() {
+        let center = UNUserNotificationCenter.current()
+        center.delegate = self
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { (flag, _) in
+            if flag {
+                DispatchQueue.main.async {
+                    UIApplication.shared.registerForRemoteNotifications()
+                }
+                center.getNotificationSettings { settings in
+                    if settings.authorizationStatus == .authorized {
+                        
+                    }
+                }
+            }
+        }
+    }
+    
+    func application(_ application: UIApplication,
+                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let token = deviceToken.hexString
+        print("didRegisterForRemoteNotificationsWithDeviceToken \(token)")
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        let info = notification.request.content.userInfo
+        print("APNS WillPresent: \(info)")
+        completionHandler([.alert, .sound, .badge])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+        let info = response.notification.request.content.userInfo
+        print("APNS DidReceive: \(info)")
+        completionHandler()
+    }
+    
+    func application(_ application: UIApplication,
+                     didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("APNS DidFailToRegister: \(error)")
+    }
+    
+}
+
+extension Data {
+    
+    var hexString: String {
+        return self.reduce("") { string, byte in
+            string + String(format: "%02X", byte)
+        }
+    }
 }
