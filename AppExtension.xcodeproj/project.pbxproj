@@ -13,6 +13,15 @@
 		8000E3C924076D4300B389A4 /* ContactTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8000E3C824076D4300B389A4 /* ContactTableCell.swift */; };
 		8000E3CB24076E5200B389A4 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8000E3CA24076E5200B389A4 /* ContactViewController.swift */; };
 		8000E3CD24076F0400B389A4 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8000E3CC24076F0400B389A4 /* ContactViewModel.swift */; };
+		80A6DEB62407E9EF008CBB1A /* SectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6DEB52407E9EF008CBB1A /* SectionModel.swift */; };
+		80A6DEB82407EAEF008CBB1A /* BaseViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6DEB72407EAEF008CBB1A /* BaseViewModelProtocol.swift */; };
+		80A6DEBC2407EE21008CBB1A /* AppExtensionCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80A6DEBA2407EE21008CBB1A /* AppExtensionCoreDataModel.xcdatamodeld */; };
+		80A6DEBF2407EEC3008CBB1A /* Contact+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6DEBD2407EEC3008CBB1A /* Contact+CoreDataProperties.swift */; };
+		80A6DEC02407EEC3008CBB1A /* Contact+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6DEBE2407EEC3008CBB1A /* Contact+CoreDataClass.swift */; };
+		80A6DEC32407EF03008CBB1A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6DEC22407EF03008CBB1A /* CoreDataManager.swift */; };
+		80A6DEC52407EFAF008CBB1A /* ContactsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6DEC42407EFAF008CBB1A /* ContactsUtility.swift */; };
+		80A6DEC72407F000008CBB1A /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6DEC62407F000008CBB1A /* DataModel.swift */; };
+		80A6DECF240802EE008CBB1A /* AppExtensionCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80A6DEBA2407EE21008CBB1A /* AppExtensionCoreDataModel.xcdatamodeld */; };
 		E33D6E0C21BFC08900A3A174 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D6E0B21BFC08900A3A174 /* Logging.swift */; };
 		E33D6E0D21BFC08900A3A174 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D6E0B21BFC08900A3A174 /* Logging.swift */; };
 		E33D6E3421BFC21D00A3A174 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E33D6E1321BFC21D00A3A174 /* Assets.xcassets */; };
@@ -74,6 +83,15 @@
 		8000E3C824076D4300B389A4 /* ContactTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableCell.swift; sourceTree = "<group>"; };
 		8000E3CA24076E5200B389A4 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		8000E3CC24076F0400B389A4 /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
+		80A6DEB52407E9EF008CBB1A /* SectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionModel.swift; sourceTree = "<group>"; };
+		80A6DEB72407EAEF008CBB1A /* BaseViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModelProtocol.swift; sourceTree = "<group>"; };
+		80A6DEBB2407EE21008CBB1A /* AppExtensionCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AppExtensionCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		80A6DEBD2407EEC3008CBB1A /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		80A6DEBE2407EEC3008CBB1A /* Contact+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataClass.swift"; sourceTree = "<group>"; };
+		80A6DEC22407EF03008CBB1A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		80A6DEC42407EFAF008CBB1A /* ContactsUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsUtility.swift; sourceTree = "<group>"; };
+		80A6DEC62407F000008CBB1A /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		80A6DECE24080059008CBB1A /* AppExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AppExtension.entitlements; sourceTree = "<group>"; };
 		811464CF8D11E4865BD648CF /* Pods-AppExtension.dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppExtension.dev.xcconfig"; path = "Pods/Target Support Files/Pods-AppExtension/Pods-AppExtension.dev.xcconfig"; sourceTree = "<group>"; };
 		8D8618986B15ADBCFDF4D754 /* Pods-AppExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppExtension/Pods-AppExtension.release.xcconfig"; sourceTree = "<group>"; };
 		91A96EEA47629467E9F619B5 /* Pods-Model.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Model.release.xcconfig"; path = "Pods/Target Support Files/Pods-Model/Pods-Model.release.xcconfig"; sourceTree = "<group>"; };
@@ -179,6 +197,18 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		80A6DEB92407EDFF008CBB1A /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				80A6DEBE2407EEC3008CBB1A /* Contact+CoreDataClass.swift */,
+				80A6DEBD2407EEC3008CBB1A /* Contact+CoreDataProperties.swift */,
+				80A6DEC22407EF03008CBB1A /* CoreDataManager.swift */,
+				80A6DEC42407EFAF008CBB1A /* ContactsUtility.swift */,
+				80A6DEBA2407EE21008CBB1A /* AppExtensionCoreDataModel.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		CD56D27A3EDF98946E221CAD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +245,7 @@
 		E33D6E1021BFC21D00A3A174 /* AppExtension */ = {
 			isa = PBXGroup;
 			children = (
+				80A6DECE24080059008CBB1A /* AppExtension.entitlements */,
 				E33D6E1921BFC21D00A3A174 /* Code */,
 				E33D6E1121BFC21D00A3A174 /* Resources */,
 			);
@@ -264,6 +295,8 @@
 				E33D6E5621BFC49600A3A174 /* TableViewCell */,
 				E33D6E4C21BFC47900A3A174 /* ImageView */,
 				E33D6E5021BFC47900A3A174 /* Loader */,
+				80A6DEB52407E9EF008CBB1A /* SectionModel.swift */,
+				80A6DEB72407EAEF008CBB1A /* BaseViewModelProtocol.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -324,6 +357,8 @@
 		E345395121B131F40062D0A6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				80A6DEC62407F000008CBB1A /* DataModel.swift */,
+				80A6DEB92407EDFF008CBB1A /* CoreData */,
 				E345395221B131F40062D0A6 /* Resources */,
 				E345395321B131F40062D0A6 /* Model.h */,
 			);
@@ -541,6 +576,7 @@
 				E33D6E4921BFC21D00A3A174 /* Configuration.swift in Sources */,
 				E33D6E5321BFC47900A3A174 /* ImageView.swift in Sources */,
 				E33D6E3A21BFC21D00A3A174 /* AppDelegate.swift in Sources */,
+				80A6DEB62407E9EF008CBB1A /* SectionModel.swift in Sources */,
 				E33D6E4021BFC21D00A3A174 /* UIView+Helper.swift in Sources */,
 				E33D6E5B21BFC49600A3A174 /* CollectionViewCell.swift in Sources */,
 				E33D6E4621BFC21D00A3A174 /* Fonts.swift in Sources */,
@@ -549,7 +585,9 @@
 				E33D6E3C21BFC21D00A3A174 /* NavigationBar.swift in Sources */,
 				E33D6E5521BFC47900A3A174 /* Loader.swift in Sources */,
 				8000E3CB24076E5200B389A4 /* ContactViewController.swift in Sources */,
+				80A6DEB82407EAEF008CBB1A /* BaseViewModelProtocol.swift in Sources */,
 				E33D6E4121BFC21D00A3A174 /* AppUtility.swift in Sources */,
+				80A6DECF240802EE008CBB1A /* AppExtensionCoreDataModel.xcdatamodeld in Sources */,
 				E33D6E3B21BFC21D00A3A174 /* UIViewController+Helper.swift in Sources */,
 				E33D6E3721BFC21D00A3A174 /* Constants.swift in Sources */,
 				E33D6E3E21BFC21D00A3A174 /* UITableViewCell+Helper.swift in Sources */,
@@ -560,6 +598,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80A6DEC72407F000008CBB1A /* DataModel.swift in Sources */,
+				80A6DEBF2407EEC3008CBB1A /* Contact+CoreDataProperties.swift in Sources */,
+				80A6DEBC2407EE21008CBB1A /* AppExtensionCoreDataModel.xcdatamodeld in Sources */,
+				80A6DEC02407EEC3008CBB1A /* Contact+CoreDataClass.swift in Sources */,
+				80A6DEC52407EFAF008CBB1A /* ContactsUtility.swift in Sources */,
+				80A6DEC32407EF03008CBB1A /* CoreDataManager.swift in Sources */,
 				E33D6E0D21BFC08900A3A174 /* Logging.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -661,6 +705,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AppExtension/AppExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2P7R4H9ZM8;
@@ -835,6 +880,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AppExtension/AppExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2P7R4H9ZM8;
@@ -858,6 +904,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AppExtension/AppExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2P7R4H9ZM8;
@@ -992,6 +1039,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AppExtension/AppExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2P7R4H9ZM8;
@@ -1071,6 +1119,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		80A6DEBA2407EE21008CBB1A /* AppExtensionCoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				80A6DEBB2407EE21008CBB1A /* AppExtensionCoreDataModel.xcdatamodel */,
+			);
+			currentVersion = 80A6DEBB2407EE21008CBB1A /* AppExtensionCoreDataModel.xcdatamodel */;
+			path = AppExtensionCoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E345391121B1203B0062D0A6 /* Project object */;
 }
