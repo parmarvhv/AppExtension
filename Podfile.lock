@@ -106,6 +106,7 @@ PODS:
   - ReactiveCocoa (10.2.0):
     - ReactiveSwift (~> 6.2)
   - ReactiveSwift (6.2.0)
+  - SwiftCharts (0.6.5)
   - SwiftLint (0.38.2)
   - XCGLogger (7.0.0):
     - XCGLogger/Core (= 7.0.0)
@@ -124,6 +125,7 @@ DEPENDENCIES:
   - MBProgressHUD (~> 1.1.0)
   - ReactiveCocoa
   - ReactiveSwift
+  - SwiftCharts
   - SwiftLint
 
 SPEC REPOS:
@@ -150,6 +152,7 @@ SPEC REPOS:
     - Protobuf
     - ReactiveCocoa
     - ReactiveSwift
+    - SwiftCharts
     - SwiftLint
     - XCGLogger
 
@@ -200,9 +203,10 @@ SPEC CHECKSUMS:
   Protobuf: dd1aaea7140debfe4dd0683fb8ef208e527ae153
   ReactiveCocoa: a123c42f449c552460a4ee217dd49c76a17c8204
   ReactiveSwift: 3dc8800378110b13d40b46ab362afa9f6bcffc6c
+  SwiftCharts: 2e755ea292f0b87d3e4b2c1eb5afc080a20cdc15
   SwiftLint: 8f5d2f903e1c9bcbc832fd16771e80a263ac6cbb
   XCGLogger: 0434f15e3909cdc450bb63faf638b8792ab782ab
 
-PODFILE CHECKSUM: 2d62248a0adf560a64ecaa0401feb344e8eaa0e9
+PODFILE CHECKSUM: edbfb8844fea85cf1f1d6f09788177d6d1941aa6
 
 COCOAPODS: 1.8.4
