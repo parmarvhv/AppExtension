@@ -13,6 +13,8 @@
 		8000E3C924076D4300B389A4 /* ContactTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8000E3C824076D4300B389A4 /* ContactTableCell.swift */; };
 		8000E3CB24076E5200B389A4 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8000E3CA24076E5200B389A4 /* ContactViewController.swift */; };
 		8000E3CD24076F0400B389A4 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8000E3CC24076F0400B389A4 /* ContactViewModel.swift */; };
+		8085362B241FAAC50085E052 /* Chart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8085362A241FAAC50085E052 /* Chart.storyboard */; };
+		808536352420A4510085E052 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808536342420A4510085E052 /* ChartViewController.swift */; };
 		80A6DEB62407E9EF008CBB1A /* SectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6DEB52407E9EF008CBB1A /* SectionModel.swift */; };
 		80A6DEB82407EAEF008CBB1A /* BaseViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6DEB72407EAEF008CBB1A /* BaseViewModelProtocol.swift */; };
 		80A6DEBC2407EE21008CBB1A /* AppExtensionCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80A6DEBA2407EE21008CBB1A /* AppExtensionCoreDataModel.xcdatamodeld */; };
@@ -105,6 +107,8 @@
 		8000E3C824076D4300B389A4 /* ContactTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableCell.swift; sourceTree = "<group>"; };
 		8000E3CA24076E5200B389A4 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		8000E3CC24076F0400B389A4 /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
+		8085362A241FAAC50085E052 /* Chart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chart.storyboard; sourceTree = "<group>"; };
+		808536342420A4510085E052 /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		80A6DEB52407E9EF008CBB1A /* SectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionModel.swift; sourceTree = "<group>"; };
 		80A6DEB72407EAEF008CBB1A /* BaseViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModelProtocol.swift; sourceTree = "<group>"; };
 		80A6DEBB2407EE21008CBB1A /* AppExtensionCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AppExtensionCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -231,6 +235,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		80853629241FAAAE0085E052 /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				8085362A241FAAC50085E052 /* Chart.storyboard */,
+				808536342420A4510085E052 /* ChartViewController.swift */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
 		80A6DEB92407EDFF008CBB1A /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -317,6 +330,7 @@
 				E33D6E1D21BFC21D00A3A174 /* AppDelegate.swift */,
 				E33D6E1C21BFC21D00A3A174 /* Storyboards.swift */,
 				E33D6E3221BFC21D00A3A174 /* Configuration.swift */,
+				80853629241FAAAE0085E052 /* Charts */,
 				8000E3C224076C7500B389A4 /* Contact */,
 				E33D6E1E21BFC21D00A3A174 /* Helpers */,
 			);
@@ -552,6 +566,7 @@
 				80A6DEDB240946BA008CBB1A /* GoogleService-Info.plist in Resources */,
 				E33D6E3421BFC21D00A3A174 /* Assets.xcassets in Resources */,
 				E33D6E3621BFC21D00A3A174 /* Main.storyboard in Resources */,
+				8085362B241FAAC50085E052 /* Chart.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,6 +672,7 @@
 				8000E3CD24076F0400B389A4 /* ContactViewModel.swift in Sources */,
 				E33D6E3D21BFC21D00A3A174 /* UIReusability.swift in Sources */,
 				E33D6E3821BFC21D00A3A174 /* ViewController.swift in Sources */,
+				808536352420A4510085E052 /* ChartViewController.swift in Sources */,
 				E33D6E5A21BFC49600A3A174 /* TableViewCell.swift in Sources */,
 				8000E3C924076D4300B389A4 /* ContactTableCell.swift in Sources */,
 				E33D6E0C21BFC08900A3A174 /* Logging.swift in Sources */,
