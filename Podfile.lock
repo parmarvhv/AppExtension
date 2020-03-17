@@ -8,6 +8,9 @@ PODS:
   - AppCenter/Core (2.5.3)
   - AppCenter/Crashes (2.5.3):
     - AppCenter/Core
+  - Charts (3.4.0):
+    - Charts/Core (= 3.4.0)
+  - Charts/Core (3.4.0)
   - Firebase/Analytics (6.15.0):
     - Firebase/Core
   - Firebase/Core (6.15.0):
@@ -116,6 +119,7 @@ PODS:
 DEPENDENCIES:
   - AnyErrorKit (from `https://github.com/Nickelfox/AnyErrorKit.git`)
   - AppCenter
+  - Charts
   - Firebase/Analytics
   - Firebase/Core
   - Firebase/Messaging
@@ -131,6 +135,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AppCenter
+    - Charts
     - Firebase
     - FirebaseAnalytics
     - FirebaseAnalyticsInterop
@@ -180,6 +185,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AnyErrorKit: 7314433dd45db671a89fe6a411f3f13d6affc0b1
   AppCenter: 765ff38c4d360fc5ec61b61a8be24d74cd6d4d83
+  Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
   Firebase: 5d77105d9740a07ca6b16927ca971db7e860faaf
   FirebaseAnalytics: e83e64b1231dedcd9ddd4bdecd9bcfd6ba341679
   FirebaseAnalyticsInterop: 3f86269c38ae41f47afeb43ebf32a001f58fcdae
@@ -207,6 +213,6 @@ SPEC CHECKSUMS:
   SwiftLint: 8f5d2f903e1c9bcbc832fd16771e80a263ac6cbb
   XCGLogger: 0434f15e3909cdc450bb63faf638b8792ab782ab
 
-PODFILE CHECKSUM: edbfb8844fea85cf1f1d6f09788177d6d1941aa6
+PODFILE CHECKSUM: 7458a045529d39a57105e6fe38ca0d4fa37a1cc8
 
 COCOAPODS: 1.8.4

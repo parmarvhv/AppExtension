@@ -15,6 +15,7 @@ target 'AppExtension' do
     pod 'Firebase/Analytics'
     pod 'ReactiveCocoa'
     pod 'SwiftCharts'
+    pod 'Charts'
 end
 
 target 'Model' do

@@ -1,5 +1,6 @@
 ${PODS_ROOT}/Target Support Files/Pods-AppExtension/Pods-AppExtension-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/AnyErrorKit/AnyErrorKit.framework
+${BUILT_PRODUCTS_DIR}/Charts/Charts.framework
 ${BUILT_PRODUCTS_DIR}/FLLogs/FLLogs.framework
 ${BUILT_PRODUCTS_DIR}/FLUtilities/FLUtilities.framework
 ${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework
