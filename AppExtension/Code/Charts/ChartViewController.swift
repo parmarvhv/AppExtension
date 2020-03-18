@@ -9,6 +9,7 @@
 import UIKit
 import Charts
 
+//swiftlint:disable all
 class ChartViewController: UIViewController {
 
     @IBOutlet var chartView: LineChartView!
@@ -55,67 +56,121 @@ class ChartViewController: UIViewController {
     
     func setDataCount(_ count: Int, _ range: UInt32) {
         
-        let lhValues = [
-            ChartDataEntry(x: 0, y: 0.1),
-            ChartDataEntry(x: 1, y: 1.820411016),
-            ChartDataEntry(x: 2, y: 0.1),
-            ChartDataEntry(x: 3, y: 2.861975264),
-            ChartDataEntry(x: 4, y: 4.32281039),
-            ChartDataEntry(x: 5, y: 3.92097487),
-            ChartDataEntry(x: 6, y: 4.007942457),
-            ChartDataEntry(x: 7, y: 5.429096002),
-            ChartDataEntry(x: 8, y: 3.970139321),
-            ChartDataEntry(x: 9, y: 3.889788656),
-            ChartDataEntry(x: 10, y: 2.914878966),
-            ChartDataEntry(x: 11, y: 4.940224826),
-            ChartDataEntry(x: 12, y: 5.466737925),
-            ChartDataEntry(x: 13, y: 5.812275749),
-            ChartDataEntry(x: 14, y: 0),
-            ChartDataEntry(x: 15, y: 5.967085664),
-            ChartDataEntry(x: 16, y: 3.418321836),
-            ChartDataEntry(x: 17, y: 5.260091179),
-            ChartDataEntry(x: 18, y: 8.364888952),
-            ChartDataEntry(x: 19, y: 0),
-            ChartDataEntry(x: 20, y: 4.7)
+        var chartDataSets: [LineChartDataSet] = []
+        var lhDataEntries: [[ChartDataEntry]] = []
+        
+        let lhRawValues: [Double?] = [nil, nil, nil, nil, nil, 0, 1.820411016, 0, 2.861975264,
+                                      4.32281039, 3.92097487, 4.007942457, 5.429096002, 3.970139321,
+                                      3.889788656, 2.914878966, 4.940224826, 5.466737925, 5.812275749,
+                                      nil, 5.967085664, 3.418321836, 5.260091179, 8.364888952, nil, 4.7,
+                                      4.4, 5.7, 5.4, 4.2, nil, 6.4, nil, nil, nil, nil, 4.6, 4.4, nil, nil,
+                                      nil, nil, nil, nil, nil, nil, nil, nil
         ]
+        
+        let e3gRawValues: [Double?] = [
+            nil,
+            nil,
+            nil,
+            nil,
+            nil,
+            22.1000398,
+            17.35401659,
+            15.89889207,
+            7.372342182,
+            17.41724513,
+            10.54070366,
+            9.177579107,
+            19.14365766,
+            7.112468003,
+            8.718191366,
+            6.036283861,
+            9.961434688,
+            14.3813456,
+            12.41902923,
+            nil,
+            11.65332028,
+            14.9029937,
+            13.49255279,
+            14.88897989,
+            nil,
+            11.3,
+            18.2,
+            20,
+            11.1,
+            15.5,
+            nil,
+            15.9,
+            nil,
+            nil,
+            nil,
+            nil,
+            9.5,
+            16,
+            nil,
+            nil,
+            nil,
+            nil,
+            nil,
+            nil,
+            nil,
+            nil,
+            nil,
+            nil
+        ]
+        
+        
+        func calculateLHDataSets() {
+            var lhDataEntryList: [ChartDataEntry] = []
+            let _ = (0..<lhRawValues.count).map { xAxis in
+                if lhRawValues[xAxis] == nil {
+                    if lhDataEntryList.isEmpty { return }
+                    lhDataEntries.append(lhDataEntryList)
+                    lhDataEntryList = []
+                } else {
+                    lhDataEntryList.append(ChartDataEntry(x: Double(xAxis), y: lhRawValues[xAxis]!))
+                }
+            }
+        }
+        
+        calculateLHDataSets()
+        
         let e3gValues = [
-            ChartDataEntry(x: 0, y: 22.1000398),
-            ChartDataEntry(x: 1, y: 17.35401659),
-            ChartDataEntry(x: 2, y: 15.89889207),
-            ChartDataEntry(x: 3, y: 7.372342182),
-            ChartDataEntry(x: 4, y: 17.41724513)
+            ChartDataEntry(x: Double(1), y: Double(22.1000398)),
+            ChartDataEntry(x: Double(2), y: Double(17.35401659)),
+            ChartDataEntry(x: Double(3), y: Double(15.89889207)),
+            ChartDataEntry(x: Double(5), y: Double(7.372342182)),
+            ChartDataEntry(x: Double(6), y: Double(17.41724513)),
+            ChartDataEntry(x: Double(8), y: Double(17.41724513)),
+            ChartDataEntry(x: Double(9), y: Double(15.89889207)),
+            ChartDataEntry(x: Double(11), y: Double(15.89889207)),
+            ChartDataEntry(x: Double(12), y: Double(3.89889207)),
+            ChartDataEntry(x: Double(13), y: Double(12.89889207)),
+            ChartDataEntry(x: Double(14), y: Double(16.89889207)),
+            ChartDataEntry(x: Double(16), y: Double(15.89889207)),
+            ChartDataEntry(x: Double(17), y: Double(16.89889207)),
+            ChartDataEntry(x: Double(18), y: Double(18.89889207)),
+            ChartDataEntry(x: Double(19), y: Double(12.89889207)),
+            ChartDataEntry(x: Double(21), y: Double(13.89889207)),
+            ChartDataEntry(x: Double(22), y: Double(11.89889207))
         ]
         
-        let lhSet = LineChartDataSet(entries: lhValues)
-        lhSet.mode = .cubicBezier
-        lhSet.cubicIntensity = 0.2
-        lhSet.axisDependency = .left
-        lhSet.setColor(UIColor(hexString: "1989BC"))
-        lhSet.setCircleColor(.white)
-        lhSet.circleHoleColor = UIColor(hexString: "1989BC")
-        lhSet.circleHoleRadius = 3
-        lhSet.lineWidth = 2
-        lhSet.circleRadius = 5
-        lhSet.highlightColor = UIColor(hexString: "112D35")
-        lhSet.highlightLineWidth = 1
-        lhSet.drawCircleHoleEnabled = true
-        lhSet.drawHorizontalHighlightIndicatorEnabled = false
-        
-        
-        let lhNullSet = LineChartDataSet(entries: lhValues)
-        lhNullSet.mode = .cubicBezier
-        lhNullSet.cubicIntensity = 0.2
-        lhNullSet.axisDependency = .left
-        lhNullSet.setColor(.clear)
-        lhNullSet.setCircleColor(.clear)
-        lhNullSet.circleHoleColor = .clear
-        lhNullSet.circleHoleRadius = 3
-        lhNullSet.lineWidth = 2
-        lhNullSet.circleRadius = 5
-        lhNullSet.highlightColor = .clear
-        lhNullSet.highlightLineWidth = 1
-        lhNullSet.drawCircleHoleEnabled = true
-        lhNullSet.drawHorizontalHighlightIndicatorEnabled = false
+        for lhDataEntry in lhDataEntries {
+            let lhSet = LineChartDataSet(entries: lhDataEntry)
+            lhSet.mode = .cubicBezier
+            lhSet.cubicIntensity = 0.2
+            lhSet.axisDependency = .left
+            lhSet.setColor(UIColor(hexString: "1989BC"))
+            lhSet.setCircleColor(.white)
+            lhSet.circleHoleColor = UIColor(hexString: "1989BC")
+            lhSet.circleHoleRadius = 3
+            lhSet.lineWidth = 2
+            lhSet.circleRadius = 5
+            lhSet.highlightColor = UIColor(hexString: "112D35")
+            lhSet.highlightLineWidth = 1
+            lhSet.drawCircleHoleEnabled = true
+            lhSet.drawHorizontalHighlightIndicatorEnabled = false
+            chartDataSets.append(lhSet)
+        }
         
         let e3gSet = LineChartDataSet(entries: e3gValues)
         e3gSet.mode = .cubicBezier
@@ -147,7 +202,9 @@ class ChartViewController: UIViewController {
         e3gNullSet.drawCircleHoleEnabled = true
         e3gNullSet.drawHorizontalHighlightIndicatorEnabled = false
         
-        let data = LineChartData(dataSets: [lhSet, e3gSet])
+        chartDataSets.append(e3gSet)
+        
+        let data = LineChartData(dataSets: chartDataSets)
         data.setValueTextColor(.clear)
         data.setValueFont(.systemFont(ofSize: 9))
         
@@ -160,7 +217,6 @@ class ChartViewController: UIViewController {
                                             axis: self.chartView.data!
                                                 .getDataSetByIndex(highlight.dataSetIndex).axisDependency,
                                             duration: 1)
-        print(highlight)
     }
     
 }
