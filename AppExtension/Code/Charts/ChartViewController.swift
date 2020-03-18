@@ -33,12 +33,13 @@ class ChartViewController: UIViewController {
         xAxis.labelFont = .systemFont(ofSize: 12)
         xAxis.labelTextColor = .white
         xAxis.drawAxisLineEnabled = false
+        xAxis.axisMinimum = -1
         xAxis.drawGridLinesEnabled = false
 
         let leftAxis = chartView.leftAxis
         leftAxis.labelTextColor = UIColor(red: 51/255, green: 181/255, blue: 229/255, alpha: 1)
         leftAxis.axisMaximum = 30
-        leftAxis.axisMinimum = -1
+        leftAxis.axisMinimum = 0
         leftAxis.drawGridLinesEnabled = true
         leftAxis.granularityEnabled = false
         leftAxis.drawAxisLineEnabled = false
@@ -58,6 +59,7 @@ class ChartViewController: UIViewController {
         
         var chartDataSets: [LineChartDataSet] = []
         var lhDataEntries: [[ChartDataEntry]] = []
+        var e3gDataEntries: [[ChartDataEntry]] = []
         
         let lhRawValues: [Double?] = [nil, nil, nil, nil, nil, 0, 1.820411016, 0, 2.861975264,
                                       4.32281039, 3.92097487, 4.007942457, 5.429096002, 3.970139321,
@@ -132,27 +134,21 @@ class ChartViewController: UIViewController {
             }
         }
         
-        calculateLHDataSets()
+        func calculateE3GDataSets() {
+            var e3gDataEntryList: [ChartDataEntry] = []
+            let _ = (0..<e3gRawValues.count).map { xAxis in
+                if e3gRawValues[xAxis] == nil {
+                    if e3gDataEntryList.isEmpty { return }
+                    e3gDataEntries.append(e3gDataEntryList)
+                    e3gDataEntryList = []
+                } else {
+                    e3gDataEntryList.append(ChartDataEntry(x: Double(xAxis), y: e3gRawValues[xAxis]!))
+                }
+            }
+        }
         
-        let e3gValues = [
-            ChartDataEntry(x: Double(1), y: Double(22.1000398)),
-            ChartDataEntry(x: Double(2), y: Double(17.35401659)),
-            ChartDataEntry(x: Double(3), y: Double(15.89889207)),
-            ChartDataEntry(x: Double(5), y: Double(7.372342182)),
-            ChartDataEntry(x: Double(6), y: Double(17.41724513)),
-            ChartDataEntry(x: Double(8), y: Double(17.41724513)),
-            ChartDataEntry(x: Double(9), y: Double(15.89889207)),
-            ChartDataEntry(x: Double(11), y: Double(15.89889207)),
-            ChartDataEntry(x: Double(12), y: Double(3.89889207)),
-            ChartDataEntry(x: Double(13), y: Double(12.89889207)),
-            ChartDataEntry(x: Double(14), y: Double(16.89889207)),
-            ChartDataEntry(x: Double(16), y: Double(15.89889207)),
-            ChartDataEntry(x: Double(17), y: Double(16.89889207)),
-            ChartDataEntry(x: Double(18), y: Double(18.89889207)),
-            ChartDataEntry(x: Double(19), y: Double(12.89889207)),
-            ChartDataEntry(x: Double(21), y: Double(13.89889207)),
-            ChartDataEntry(x: Double(22), y: Double(11.89889207))
-        ]
+        calculateLHDataSets()
+        calculateE3GDataSets()
         
         for lhDataEntry in lhDataEntries {
             let lhSet = LineChartDataSet(entries: lhDataEntry)
@@ -172,37 +168,23 @@ class ChartViewController: UIViewController {
             chartDataSets.append(lhSet)
         }
         
-        let e3gSet = LineChartDataSet(entries: e3gValues)
-        e3gSet.mode = .cubicBezier
-        e3gSet.cubicIntensity = 0.2
-        e3gSet.axisDependency = .left
-        e3gSet.setColor(UIColor(hexString: "8828E2"))
-        e3gSet.setCircleColor(.white)
-        e3gSet.circleHoleColor = UIColor(hexString: "8828E2")
-        e3gSet.circleHoleRadius = 3
-        e3gSet.lineWidth = 2
-        e3gSet.circleRadius = 5
-        e3gSet.highlightColor = UIColor(hexString: "112D35")
-        e3gSet.highlightLineWidth = 1
-        e3gSet.drawCircleHoleEnabled = true
-        e3gSet.drawHorizontalHighlightIndicatorEnabled = false
-
-        let e3gNullSet = LineChartDataSet(entries: e3gValues)
-        e3gNullSet.mode = .cubicBezier
-        e3gNullSet.cubicIntensity = 0.2
-        e3gNullSet.axisDependency = .left
-        e3gNullSet.setColor(.clear)
-        e3gNullSet.setCircleColor(.clear)
-        e3gNullSet.circleHoleColor = .clear
-        e3gNullSet.circleHoleRadius = 3
-        e3gNullSet.lineWidth = 2
-        e3gNullSet.circleRadius = 5
-        e3gNullSet.highlightColor = .clear
-        e3gNullSet.highlightLineWidth = 1
-        e3gNullSet.drawCircleHoleEnabled = true
-        e3gNullSet.drawHorizontalHighlightIndicatorEnabled = false
-        
-        chartDataSets.append(e3gSet)
+        for e3gDataEntry in e3gDataEntries {
+            let e3gSet = LineChartDataSet(entries: e3gDataEntry)
+            e3gSet.mode = .cubicBezier
+            e3gSet.cubicIntensity = 0.2
+            e3gSet.axisDependency = .left
+            e3gSet.setColor(UIColor(hexString: "8828E2"))
+            e3gSet.setCircleColor(.white)
+            e3gSet.circleHoleColor = UIColor(hexString: "8828E2")
+            e3gSet.circleHoleRadius = 3
+            e3gSet.lineWidth = 2
+            e3gSet.circleRadius = 5
+            e3gSet.highlightColor = UIColor(hexString: "112D35")
+            e3gSet.highlightLineWidth = 1
+            e3gSet.drawCircleHoleEnabled = true
+            e3gSet.drawHorizontalHighlightIndicatorEnabled = false
+            chartDataSets.append(e3gSet)
+        }
         
         let data = LineChartData(dataSets: chartDataSets)
         data.setValueTextColor(.clear)
