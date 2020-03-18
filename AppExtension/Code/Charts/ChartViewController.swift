@@ -41,7 +41,8 @@ class ChartViewController: UIViewController {
         leftAxis.axisMaximum = 30
         leftAxis.axisMinimum = 0
         leftAxis.drawGridLinesEnabled = true
-        leftAxis.granularityEnabled = false
+        leftAxis.granularityEnabled = true
+        leftAxis.granularity = 10
         leftAxis.drawAxisLineEnabled = false
 
         let rightAxis = chartView.rightAxis
