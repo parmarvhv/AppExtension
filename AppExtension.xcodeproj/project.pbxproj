@@ -24,7 +24,6 @@
 		80A6DEC52407EFAF008CBB1A /* ContactsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6DEC42407EFAF008CBB1A /* ContactsUtility.swift */; };
 		80A6DEC72407F000008CBB1A /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6DEC62407F000008CBB1A /* DataModel.swift */; };
 		80A6DECF240802EE008CBB1A /* AppExtensionCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80A6DEBA2407EE21008CBB1A /* AppExtensionCoreDataModel.xcdatamodeld */; };
-		80A6DEDB240946BA008CBB1A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80A6DEDA240946BA008CBB1A /* GoogleService-Info.plist */; };
 		80A6DEE324094BED008CBB1A /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6DEE224094BED008CBB1A /* NotificationService.swift */; };
 		80A6DEE724094BED008CBB1A /* NotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 80A6DEE024094BED008CBB1A /* NotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		80A6DEEF24094D37008CBB1A /* AppExtensionCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80A6DEBA2407EE21008CBB1A /* AppExtensionCoreDataModel.xcdatamodeld */; };
@@ -118,7 +117,6 @@
 		80A6DEC42407EFAF008CBB1A /* ContactsUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsUtility.swift; sourceTree = "<group>"; };
 		80A6DEC62407F000008CBB1A /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		80A6DECE24080059008CBB1A /* AppExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AppExtension.entitlements; sourceTree = "<group>"; };
-		80A6DEDA240946BA008CBB1A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		80A6DEE024094BED008CBB1A /* NotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		80A6DEE224094BED008CBB1A /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		80A6DEE424094BED008CBB1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -312,7 +310,6 @@
 		E33D6E1121BFC21D00A3A174 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				80A6DEDA240946BA008CBB1A /* GoogleService-Info.plist */,
 				E33D6E1221BFC21D00A3A174 /* AppExtension-Info.plist */,
 				E33D6E1321BFC21D00A3A174 /* Assets.xcassets */,
 				E33D6E1421BFC21D00A3A174 /* LaunchScreen.storyboard */,
@@ -563,7 +560,6 @@
 			files = (
 				E33D6E3521BFC21D00A3A174 /* LaunchScreen.storyboard in Resources */,
 				8000E3C424076C9000B389A4 /* Contact.storyboard in Resources */,
-				80A6DEDB240946BA008CBB1A /* GoogleService-Info.plist in Resources */,
 				E33D6E3421BFC21D00A3A174 /* Assets.xcassets in Resources */,
 				E33D6E3621BFC21D00A3A174 /* Main.storyboard in Resources */,
 				8085362B241FAAC50085E052 /* Chart.storyboard in Resources */,
