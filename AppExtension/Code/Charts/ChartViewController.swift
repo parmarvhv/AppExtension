@@ -14,11 +14,11 @@ class ChartViewController: UIViewController {
 
     @IBOutlet var chartView: LineChartView!
     
+    let peakImage = UIImage(named: "Peak")!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialSetup()
-        self.setDataCount(5, 10)
-        self.chartView.setVisibleXRangeMaximum(10)
     }
 
     private func initialSetup() {
@@ -28,18 +28,24 @@ class ChartViewController: UIViewController {
         self.chartView.setScaleEnabled(false)
         self.chartView.pinchZoomEnabled = false
         self.chartView.legend.enabled = false
+        self.chartView.highlightPerDragEnabled = false
+        self.chartView.backgroundColor = .white
         
         let xAxis = chartView.xAxis
         xAxis.labelFont = .systemFont(ofSize: 12)
-        xAxis.labelTextColor = .white
+        xAxis.labelTextColor = .darkGray
         xAxis.drawAxisLineEnabled = false
-        xAxis.axisMinimum = -1
+        xAxis.axisMinimum = 0
         xAxis.drawGridLinesEnabled = false
-
+        xAxis.labelPosition = .bottomInside
+        xAxis.granularityEnabled = true
+        xAxis.granularity = 1
+        xAxis.avoidFirstLastClippingEnabled = true
+        
         let leftAxis = chartView.leftAxis
         leftAxis.labelTextColor = UIColor(red: 51/255, green: 181/255, blue: 229/255, alpha: 1)
         leftAxis.axisMaximum = 30
-        leftAxis.axisMinimum = 0
+        leftAxis.axisMinimum = -5
         leftAxis.drawGridLinesEnabled = true
         leftAxis.granularityEnabled = true
         leftAxis.granularity = 10
@@ -54,9 +60,13 @@ class ChartViewController: UIViewController {
         rightAxis.drawGridLinesEnabled = false
         
         chartView.animate(xAxisDuration: 1.0)
+        
+        self.setDataCount()
+        
+        self.chartView.setVisibleXRangeMaximum(10)
     }
     
-    func setDataCount(_ count: Int, _ range: UInt32) {
+    func setDataCount() {
         
         var chartDataSets: [LineChartDataSet] = []
         var lhDataEntries: [[ChartDataEntry]] = []
@@ -120,7 +130,14 @@ class ChartViewController: UIViewController {
             nil,
             nil
         ]
+                
+        let xAxisDataSet = (0..<lhRawValues.count).map {
+            return "\($0)"
+        }
         
+        let fertilityRawValues: [Double] = [10, 10, 10, 10, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11,
+            11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 13, 12, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11,
+            11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11]
         
         func calculateLHDataSets() {
             var lhDataEntryList: [ChartDataEntry] = []
@@ -192,6 +209,21 @@ class ChartViewController: UIViewController {
         data.setValueFont(.systemFont(ofSize: 9))
         
         self.chartView.data = data
+        
+        self.chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: xAxisDataSet)
+        self.chartView.xAxis.labelCount = xAxisDataSet.count
+        self.chartView.xAxis.spaceMax = 0.5
+        self.chartView.xAxis.spaceMin = 0.5
+        
+        let icons = xAxisDataSet.map { _ in
+            return self.peakImage
+        }
+        
+        let transformer = self.chartView.getTransformer(forAxis: self.chartView!.leftAxis.axisDependency)
+        let iconXAxisRendrer = IconXAxisRendrer.init(viewPortHandler: self.chartView.viewPortHandler,
+                                                     xAxis: self.chartView.xAxis,
+                                                     transformer: transformer, icons: icons)
+        self.chartView.xAxisRenderer = iconXAxisRendrer
     }
     
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {

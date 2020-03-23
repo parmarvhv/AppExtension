@@ -17,13 +17,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tSM-Fc-AJc" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="20" y="64" width="374" height="778"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <rect key="frame" x="20" y="64" width="374" height="390"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="390" id="qoN-fj-Zgd"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="xSE-xi-jRJ" firstAttribute="bottom" secondItem="tSM-Fc-AJc" secondAttribute="bottom" constant="20" id="X8i-0w-E9B"/>
                             <constraint firstItem="tSM-Fc-AJc" firstAttribute="top" secondItem="xSE-xi-jRJ" secondAttribute="top" constant="20" id="YR8-GH-7fB"/>
                             <constraint firstItem="tSM-Fc-AJc" firstAttribute="leading" secondItem="xSE-xi-jRJ" secondAttribute="leading" constant="20" id="hb7-Ic-Fri"/>
                             <constraint firstItem="xSE-xi-jRJ" firstAttribute="trailing" secondItem="tSM-Fc-AJc" secondAttribute="trailing" constant="20" id="vqF-JT-4m5"/>

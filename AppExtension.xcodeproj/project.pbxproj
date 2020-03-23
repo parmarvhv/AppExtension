@@ -27,6 +27,7 @@
 		80A6DEE324094BED008CBB1A /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6DEE224094BED008CBB1A /* NotificationService.swift */; };
 		80A6DEE724094BED008CBB1A /* NotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 80A6DEE024094BED008CBB1A /* NotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		80A6DEEF24094D37008CBB1A /* AppExtensionCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80A6DEBA2407EE21008CBB1A /* AppExtensionCoreDataModel.xcdatamodeld */; };
+		80F05150242879A10078E8C5 /* IconXAxisRendrer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F0514F242879A10078E8C5 /* IconXAxisRendrer.swift */; };
 		E33D6E0C21BFC08900A3A174 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D6E0B21BFC08900A3A174 /* Logging.swift */; };
 		E33D6E0D21BFC08900A3A174 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D6E0B21BFC08900A3A174 /* Logging.swift */; };
 		E33D6E3421BFC21D00A3A174 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E33D6E1321BFC21D00A3A174 /* Assets.xcassets */; };
@@ -121,6 +122,7 @@
 		80A6DEE224094BED008CBB1A /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		80A6DEE424094BED008CBB1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80A6DEEE24094C10008CBB1A /* NotificationServiceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotificationServiceExtension.entitlements; sourceTree = "<group>"; };
+		80F0514F242879A10078E8C5 /* IconXAxisRendrer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconXAxisRendrer.swift; sourceTree = "<group>"; };
 		811464CF8D11E4865BD648CF /* Pods-AppExtension.dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppExtension.dev.xcconfig"; path = "Pods/Target Support Files/Pods-AppExtension/Pods-AppExtension.dev.xcconfig"; sourceTree = "<group>"; };
 		8D8618986B15ADBCFDF4D754 /* Pods-AppExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppExtension/Pods-AppExtension.release.xcconfig"; sourceTree = "<group>"; };
 		91A96EEA47629467E9F619B5 /* Pods-Model.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Model.release.xcconfig"; path = "Pods/Target Support Files/Pods-Model/Pods-Model.release.xcconfig"; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 			children = (
 				8085362A241FAAC50085E052 /* Chart.storyboard */,
 				808536342420A4510085E052 /* ChartViewController.swift */,
+				80F0514F242879A10078E8C5 /* IconXAxisRendrer.swift */,
 			);
 			path = Charts;
 			sourceTree = "<group>";
@@ -688,6 +691,7 @@
 				E33D6E4121BFC21D00A3A174 /* AppUtility.swift in Sources */,
 				80A6DECF240802EE008CBB1A /* AppExtensionCoreDataModel.xcdatamodeld in Sources */,
 				E33D6E3B21BFC21D00A3A174 /* UIViewController+Helper.swift in Sources */,
+				80F05150242879A10078E8C5 /* IconXAxisRendrer.swift in Sources */,
 				E33D6E3721BFC21D00A3A174 /* Constants.swift in Sources */,
 				E33D6E3E21BFC21D00A3A174 /* UITableViewCell+Helper.swift in Sources */,
 			);
