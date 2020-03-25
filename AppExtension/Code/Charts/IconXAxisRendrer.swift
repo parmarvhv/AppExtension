@@ -101,6 +101,99 @@ public class IconXAxisRendrer: XAxisRenderer {
             }
         }
     }
+    
+    public override func renderGridLines(context: CGContext) {
+        super.renderGridLines(context: context)
+        self.renderLimitArea(context: context)
+    }
+    
+    public func transformedLimitPositions() -> [CGPoint] {
+        guard let xAxis = self.axis as? XAxis,
+            let transformer = self.transformer else { return [CGPoint]() }
+        
+        var positions = [CGPoint]()
+        positions.reserveCapacity(xAxis.limitLines.count)
+        
+        let limitLines = xAxis.limitLines
+        
+        for i in stride(from: 0,
+                        to: xAxis.limitLines.count,
+                        by: 1) {
+            positions.append(CGPoint(x: 0.0, y: limitLines[i].limit))
+        }
+        
+        transformer.pointValuesToPixel(&positions)
+        return positions
+    }
+    
+    public func renderLimitArea(context: CGContext) {
+        guard let xAxis = self.axis as? XAxis else { return }
+        
+        if !xAxis.isEnabled {
+            return
+        }
+        
+        if xAxis.limitLines.count > 1 {
+            var limitPositions = transformedLimitPositions()
+            let viewPortHandler = self.viewPortHandler
+            
+            var width =  (viewPortHandler.contentBottom) - (viewPortHandler.contentTop)
+            if limitPositions.count > 1 {
+                width = abs(limitPositions[0].y -  limitPositions[1].y)
+            }
+            
+            context.saveGState()
+            defer { context.restoreGState() }
+            context.clip(to: self.gridClippingRect)
+            context.setShouldAntialias(xAxis.gridAntialiasEnabled)
+            context.setStrokeColor(xAxis.gridColor.cgColor)
+            context.setLineWidth(xAxis.gridLineWidth)
+            context.setLineCap(xAxis.gridLineCap)
+            
+            if xAxis.gridLineDashLengths != nil {
+                context.setLineDash(phase: xAxis.gridLineDashPhase, lengths: xAxis.gridLineDashLengths)
+            }
+            else {
+                context.setLineDash(phase: 0.0, lengths: [])
+            }
+            
+            for i in stride(from: 0, to: limitPositions.count, by: 2) {
+                
+                let currentColor = getColor(index: i)
+                context.setStrokeColor(currentColor)
+                context.setLineWidth(width)
+                context.beginPath()
+
+                let point1 = CGPoint(x: viewPortHandler.contentLeft, y: (limitPositions[i].y + limitPositions[i+1].y)/2)
+
+//                let point1 = CGPoint(x: 10, y: 50)// + limitPositions[i+1].y)/2)
+
+                context.move(to: point1)
+
+                let point2 = CGPoint(x: viewPortHandler.contentRight, y:  (limitPositions[i].y + limitPositions[i+1].y)/2)
+
+//                let point2 = CGPoint(x: 10, y:  100)// + limitPositions[i+1].y)/2)
+
+                context.addLine(to: point2)
+
+                print("Point 1: \(point1)")
+                print("\n Point 2: \(point2)")
+
+                context.strokePath()
+            }
+        }
+    }
+    
+    func getColor(index : Int) -> CGColor{
+        return UIColor.systemOrange.withAlphaComponent(0.5).cgColor
+        //        var color:CGColor
+        //        if index == 0 {
+        //            color = UIColor(hexString: "#2DBE9D").withAlphaComponent(0.2).cgColor
+        //        }else {
+        //            color = UIColor(hexString: "#6945AC").withAlphaComponent(0.2).cgColor
+        //        }
+        //        return color
+    }
 }
 
 extension UIImage {

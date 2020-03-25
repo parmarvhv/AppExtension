@@ -13,6 +13,7 @@
 		8000E3C924076D4300B389A4 /* ContactTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8000E3C824076D4300B389A4 /* ContactTableCell.swift */; };
 		8000E3CB24076E5200B389A4 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8000E3CA24076E5200B389A4 /* ContactViewController.swift */; };
 		8000E3CD24076F0400B389A4 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8000E3CC24076F0400B389A4 /* ContactViewModel.swift */; };
+		8055408F242902D7007B0709 /* YAxisRendrer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8055408E242902D7007B0709 /* YAxisRendrer.swift */; };
 		8085362B241FAAC50085E052 /* Chart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8085362A241FAAC50085E052 /* Chart.storyboard */; };
 		808536352420A4510085E052 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808536342420A4510085E052 /* ChartViewController.swift */; };
 		80A6DEB62407E9EF008CBB1A /* SectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6DEB52407E9EF008CBB1A /* SectionModel.swift */; };
@@ -107,6 +108,7 @@
 		8000E3C824076D4300B389A4 /* ContactTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableCell.swift; sourceTree = "<group>"; };
 		8000E3CA24076E5200B389A4 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		8000E3CC24076F0400B389A4 /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
+		8055408E242902D7007B0709 /* YAxisRendrer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YAxisRendrer.swift; sourceTree = "<group>"; };
 		8085362A241FAAC50085E052 /* Chart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chart.storyboard; sourceTree = "<group>"; };
 		808536342420A4510085E052 /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		80A6DEB52407E9EF008CBB1A /* SectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionModel.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				8085362A241FAAC50085E052 /* Chart.storyboard */,
 				808536342420A4510085E052 /* ChartViewController.swift */,
 				80F0514F242879A10078E8C5 /* IconXAxisRendrer.swift */,
+				8055408E242902D7007B0709 /* YAxisRendrer.swift */,
 			);
 			path = Charts;
 			sourceTree = "<group>";
@@ -677,6 +680,7 @@
 				E33D6E0C21BFC08900A3A174 /* Logging.swift in Sources */,
 				E33D6E4921BFC21D00A3A174 /* Configuration.swift in Sources */,
 				E33D6E5321BFC47900A3A174 /* ImageView.swift in Sources */,
+				8055408F242902D7007B0709 /* YAxisRendrer.swift in Sources */,
 				E33D6E3A21BFC21D00A3A174 /* AppDelegate.swift in Sources */,
 				80A6DEB62407E9EF008CBB1A /* SectionModel.swift in Sources */,
 				E33D6E4021BFC21D00A3A174 /* UIView+Helper.swift in Sources */,

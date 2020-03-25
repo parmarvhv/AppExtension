@@ -214,6 +214,9 @@ class ChartViewController: UIViewController {
         self.chartView.xAxis.labelCount = xAxisDataSet.count
         self.chartView.xAxis.spaceMax = 0.5
         self.chartView.xAxis.spaceMin = 0.5
+
+        
+        self.drawLimtArea()
         
         let icons = xAxisDataSet.map { _ in
             return self.peakImage
@@ -224,6 +227,48 @@ class ChartViewController: UIViewController {
                                                      xAxis: self.chartView.xAxis,
                                                      transformer: transformer, icons: icons)
         self.chartView.xAxisRenderer = iconXAxisRendrer
+
+    }
+    
+    func drawLimtArea() {
+        
+        let first:ChartLimitLine = ChartLimitLine(limit: Double(10), label: "")
+        first.lineWidth = 1
+        first.lineColor = UIColor.white.withAlphaComponent(0)
+        first.lineDashLengths = []
+        first.lineDashPhase = 0.0
+              
+        let second:ChartLimitLine = ChartLimitLine(limit: Double(15), label: "")
+        second.lineWidth = 1
+        second.lineColor = UIColor.white.withAlphaComponent(0)
+        second.lineDashLengths = []
+        second.lineDashPhase = 0.0
+        
+        let third:ChartLimitLine = ChartLimitLine(limit: Double(20), label: "")
+        third.lineWidth = 1
+        third.lineColor = UIColor.white.withAlphaComponent(0)
+        third.lineDashLengths = []
+        third.lineDashPhase = 0.0
+              
+        let fourth:ChartLimitLine = ChartLimitLine(limit: Double(25), label: "")
+        fourth.lineWidth = 1
+        fourth.lineColor = UIColor.white.withAlphaComponent(0)
+        fourth.lineDashLengths = []
+        fourth.lineDashPhase = 0.0
+        
+        self.chartView.xAxis.addLimitLine(first)
+        self.chartView.xAxis.addLimitLine(second)
+        self.chartView.xAxis.addLimitLine(third)
+        self.chartView.xAxis.addLimitLine(fourth)
+        
+//        self.chartView.leftAxis.addLimitLine(first)
+//        self.chartView.leftAxis.addLimitLine(second)
+//        self.chartView.leftAxis.addLimitLine(third)
+//        self.chartView.leftAxis.addLimitLine(fourth)
+
+//        let transformer = self.chartView.getTransformer(forAxis: self.chartView!.leftAxis.axisDependency)
+//        
+//        self.chartView.leftYAxisRenderer = ChartYAxisArea(viewPortHandler: self.chartView.viewPortHandler!, yAxis: self.chartView.leftAxis, transformer: transformer)
     }
     
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
