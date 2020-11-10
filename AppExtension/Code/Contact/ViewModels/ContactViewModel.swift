@@ -16,7 +16,7 @@ protocol ContactViewModelProtocol: BaseViewModelProtocol {
 
 class ContactViewModel {
     
-    var view: ContactViewModelProtocol
+    weak var view: ContactViewModelProtocol?
     var loading = MutableProperty<Bool>(false)
     var disposable = CompositeDisposable([])
     var sectionModels = MutableProperty<[SectionModel]>([])
@@ -50,7 +50,7 @@ class ContactViewModel {
         }
         
         ContactsUtility.shared.requestedForAccess { isSuccess in
-            if !isSuccess { self.view.showOpenSettingsAlert() }
+            if !isSuccess { self.view?.showOpenSettingsAlert() }
         }
     }
     
